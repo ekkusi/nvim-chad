@@ -36,7 +36,7 @@ opt.ruler = false
 opt.shortmess:append "sI"
 
 opt.signcolumn = "yes"
-opt.splitbelow = true
+opt.splitbelow = false
 opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
@@ -102,7 +102,7 @@ autocmd("BufWritePost", {
       vim.opt.tabline = "%!v:lua.require('nvchad.tabufline.modules').run()"
     end
 
-    require("base46").load_all_highlights()
+    -- require("base46").load_all_highlights()
     -- vim.cmd("redraw!")
   end,
 })
@@ -137,5 +137,5 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()
-  require "nvchad.updater"()
+  require "nvchad.updater" ()
 end, {})

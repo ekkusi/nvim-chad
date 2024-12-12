@@ -1,3 +1,4 @@
+vim.g.nvim_tree_disable_default_keybindings = 1
 local options = {
   filters = {
     dotfiles = false,

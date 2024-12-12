@@ -47,8 +47,16 @@ local options = {
       n = { ["q"] = require("telescope.actions").close },
     },
   },
+  extensions = {
+    ["ui-select"] = require("telescope.themes").get_dropdown({}),
+  },
 
-  extensions_list = { "themes", "terms" },
+  extensions_list = {
+    "themes",
+    "terms",
+    "ui-select",
+    "fzf"
+  },
 }
 
 return options
