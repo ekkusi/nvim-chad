@@ -1,4 +1,5 @@
 -- n, v, i, t = mode names
+local utils = require "custom.utils"
 
 local M = {}
 
@@ -103,11 +104,11 @@ M.tabufline = {
 
     ["<leader>X"] = {
       function()
-        require("nvchad.tabufline").closeBufs_at_direction("right")
-        require("nvchad.tabufline").closeBufs_at_direction("left")
+        require("nvchad.tabufline").closeBufs_at_direction "right"
+        require("nvchad.tabufline").closeBufs_at_direction "left"
       end,
-      "Close all but this buffer"
-    }
+      "Close all but this buffer",
+    },
   },
 }
 
@@ -262,7 +263,6 @@ M.telescope = {
 
   n = {
     -- find
-    ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },

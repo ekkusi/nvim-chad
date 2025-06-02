@@ -161,5 +161,14 @@ local plugins = {
     "itchyny/vim-qfedit",
     event = { "BufReadPre", "BufNewFile" },
   },
+  {
+    "ThePrimeagen/harpoon",
+    event = { "BufReadPre", "BufNewFile" },
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require "custom.configs.harpoon"
+    end,
+  },
 }
 return plugins

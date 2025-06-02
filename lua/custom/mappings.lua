@@ -77,4 +77,17 @@ M.nvimtree = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    ["<C-p>"] = {
+      function()
+        utils.HandleCtrlP()
+      end,
+      "Find files",
+    },
+  },
+}
+
 return M
