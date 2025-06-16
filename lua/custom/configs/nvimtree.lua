@@ -76,6 +76,12 @@ vim.g.nvim_tree_respect_buf_cwd = 1
 local options = require "plugins.configs.nvimtree"
 
 options.on_attach = on_attach
-options.view.width = 40
+options.view.width = 50
+
+if vim.o.columns > 300 then
+  options.view.width = 50
+else
+  options.view.width = 40
+end
 
 return options
