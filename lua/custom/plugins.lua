@@ -40,10 +40,6 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  -- {
-  --   "github/copilot.vim",
-  --   event = { "BufReadPost", "BufNewFile" },
-  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -94,7 +90,13 @@ local plugins = {
     -- cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("vscode").setup()
+      local c = require("vscode.colors").get_colors()
+      require("vscode").setup {
+        group_overrides = {
+          IndentBlanklineChar = { fg = c.vscContext },
+          IndentBlanklineContextChar = { fg = c.vscContextCurrent },
+        },
+      }
       require("vscode").load()
     end,
   },
@@ -163,11 +165,38 @@ local plugins = {
   },
   {
     "ThePrimeagen/harpoon",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "User FilePost",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require "custom.configs.harpoon"
+    end,
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "ravitemer/mcphub.nvim",
+    },
+    config = function()
+      require "custom.configs.codecompanion"
+    end,
+  },
+  {
+    "ravitemer/mcphub.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    build = "npm install -g mcp-hub@latest",
+    config = function()
+      require("mcphub").setup()
+    end,
+  },
+  {
+    "milanglacier/minuet-ai.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require "custom.configs.minuet-ai"
     end,
   },
 }

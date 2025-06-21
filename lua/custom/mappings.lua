@@ -90,4 +90,80 @@ M.telescope = {
   },
 }
 
+M.lspconfig = {
+  plugin = true,
+
+  n = {
+    ["K"] = {
+      function()
+        vim.lsp.buf.hover { border = "rounded" }
+      end,
+      "LSP hover",
+    },
+    ["Md"] = {
+      vim.diagnostic.goto_prev,
+      "Go to previous diagnostic message",
+    },
+    ["md"] = {
+      vim.diagnostic.goto_next,
+      "Go to next diagnostic message",
+    },
+    ["<leader>de"] = {
+      vim.diagnostic.open_float,
+      "Open floating diagnostic message",
+    },
+    ["<leader>dq"] = {
+      vim.diagnostic.setloclist,
+      "Open diagnostics list",
+    },
+    -- -- Additional LSP mappings
+    ["<leader>dws"] = {
+      function()
+        vim.lsp.buf.workspace_symbol()
+      end,
+      "Workspace [S]ymbols",
+    },
+    ["<leader>."] = {
+      vim.lsp.buf.code_action,
+      "[C]ode [A]ction",
+    },
+    ["<leader>drr"] = {
+      vim.lsp.buf.references,
+      "[R]eferences",
+    },
+    ["<leader>drn"] = {
+      vim.lsp.buf.rename,
+      "[R]ename",
+    },
+  },
+}
+
+M.codecompanion = {
+  n = {
+    ["<leader>CA"] = {
+      "<cmd>CodeCompanionActions<cr>",
+      "CodeCompanion actions",
+    },
+    ["<leader>Co"] = {
+      "<cmd>CodeCompanionChat Toggle<cr>",
+      "CodeCompanion chat toggle",
+    },
+  },
+
+  v = {
+    ["<leader>CA"] = {
+      "<cmd>CodeCompanionActions<cr>",
+      "CodeCompanion actions",
+    },
+    ["<leader>Co"] = {
+      "<cmd>CodeCompanionChat Toggle<cr>",
+      "CodeCompanion chat toggle",
+    },
+    ["<leader>Ca"] = {
+      "<cmd>CodeCompanionChat Add<cr>",
+      "Add to CodeCompaion chat",
+    },
+  },
+}
+
 return M

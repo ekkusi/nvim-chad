@@ -155,6 +155,7 @@ M.lspconfig = {
 
     ["K"] = {
       function()
+        print "Hover"
         vim.lsp.buf.hover()
       end,
       "LSP hover",
@@ -167,12 +168,12 @@ M.lspconfig = {
       "LSP implementation",
     },
 
-    -- ["<leader>ls"] = {
-    --   function()
-    --     vim.lsp.buf.signature_help()
-    --   end,
-    --   "LSP signature help",
-    -- },
+    ["<leader>ls"] = {
+      function()
+        vim.lsp.buf.signature_help()
+      end,
+      "LSP signature help",
+    },
 
     ["<leader>D"] = {
       function()
@@ -188,19 +189,19 @@ M.lspconfig = {
       "LSP rename",
     },
 
-    -- ["gr"] = {
-    --   function()
-    --     vim.lsp.buf.references()
-    --   end,
-    --   "LSP references",
-    -- },
+    ["gr"] = {
+      function()
+        vim.lsp.buf.references()
+      end,
+      "LSP references",
+    },
 
-    -- ["<leader>lf"] = {
-    --   function()
-    --     vim.diagnostic.open_float { border = "rounded" }
-    --   end,
-    --   "Floating diagnostic",
-    -- },
+    ["<leader>lf"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "Floating diagnostic",
+    },
 
     ["[d"] = {
       function()
