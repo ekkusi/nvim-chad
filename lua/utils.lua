@@ -24,7 +24,10 @@ M.ReloadConfig = function()
 
   -- Reload chadrc and other configurations
   dofile(vim.env.MYVIMRC) -- This points to your main `init.lua` or `init.vim`
-  require("vscode").load()
+
+  -- require("vscode").load()
+  require("base46").compile()
+  require("base46").load_all_highlights() -- compiles+loads them
   print "Configuration reloaded!"
 end
 

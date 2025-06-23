@@ -72,8 +72,9 @@ local function on_attach(bufnr)
 end
 
 vim.g.nvim_tree_respect_buf_cwd = 1
+vim.g.nvim_tree_disable_default_keybindings = 1
 
-local options = require "plugins.configs.nvimtree"
+local options = require "nvchad.configs.nvimtree"
 
 options.on_attach = on_attach
 options.view.width = 50
