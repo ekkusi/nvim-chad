@@ -2,6 +2,7 @@
 --- @field None string
 --- @field Front string
 --- @field Back string
+--- @field BackDarker string
 --- @field TabCurrent string
 --- @field TabOther string
 --- @field TabOutside string
@@ -64,6 +65,7 @@ local vsc = {
   None = "NONE",
   Front = "#D4D4D4",
   Back = "#1F1F1F",
+  BackDarker = "#181818",
   TabCurrent = "#1F1F1F",
   TabOther = "#2D2D2D",
   TabOutside = "#252526",

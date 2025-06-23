@@ -13,7 +13,7 @@ local vsc = require "colors.vscode"
 M.base_30 = {
   -- Core UI Colors mapped to their NvChad names
   white = vsc.Front,
-  darker_black = "#1a1a1a", -- Kept for subtle UI differences
+  darker_black = vsc.BackDarker, -- Kept for subtle UI differences
   black = vsc.Back, -- nvim bg
   black2 = vsc.LeftDark,
   one_bg = vsc.TabOther,
@@ -223,7 +223,7 @@ M.polish_hl = {
     NvimTreeEmptyFolderName = { fg = vsc.Gray, bg = "NONE" },
     NvimTreeFolderName = { fg = vsc.Front, bg = "NONE" },
     NvimTreeSpecialFile = { fg = vsc.Pink, bg = "NONE", underline = true },
-    -- NvimTreeNormal = { fg = vsc.Front, bg = vsc.LeftDark },
+    NvimTreeNormal = { fg = vsc.Front, bg = vsc.BackDarker },
     NvimTreeCursorLine = { fg = "NONE", bg = vsc.LeftMid },
     NvimTreeVertSplit = { fg = vsc.Back, bg = vsc.Back },
     NvimTreeEndOfBuffer = { fg = vsc.LeftDark },
