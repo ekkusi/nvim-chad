@@ -6,6 +6,7 @@ local del = vim.keymap.del
 
 -- Removals from NvChad defaults
 del("n", "<leader>e") -- Open NvimTree
+del("n", "<C-n>") -- Open NvimTree
 del("n", "<leader>th") -- Telescope themes
 del("n", "<leader>cm") -- Telescope git commits
 del("n", "<leader>ch") -- NvCheatSheet
@@ -70,7 +71,7 @@ map("n", "<leader>dws", function()
   vim.lsp.buf.workspace_symbol()
 end, { desc = "Workspace Symbols" })
 map("n", "<leader>.", vim.lsp.buf.code_action, { desc = "Code Action" })
-map("n", "<leader>drr", vim.lsp.buf.references, { desc = "References" })
+map("n", "gr", vim.lsp.buf.references, { desc = "References" })
 map("n", "<leader>drn", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- CodeCompanion Keymaps (requires 'CodeCompanion.nvim' plugin)

@@ -78,6 +78,7 @@ local options = require "nvchad.configs.nvimtree"
 
 options.on_attach = on_attach
 options.view.width = 50
+options.renderer.indent_markers.enable = false
 
 if vim.o.columns > 300 then
   options.view.width = 50
