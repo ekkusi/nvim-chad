@@ -184,11 +184,11 @@ return {
       require("mcphub").setup()
     end,
   },
-  {
-    "milanglacier/minuet-ai.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require "configs.minuet-ai"
-    end,
-  },
+  -- {
+  --   "milanglacier/minuet-ai.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   config = function()
+  --     require "configs.minuet-ai"
+  --   end,
+  -- },
 }

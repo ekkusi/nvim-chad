@@ -10,6 +10,8 @@ del("n", "<C-n>") -- Open NvimTree
 del("n", "<leader>th") -- Telescope themes
 del("n", "<leader>cm") -- Telescope git commits
 del("n", "<leader>ch") -- NvCheatSheet
+del("i", "<Tab>")
+del("i", "<S-Tab>")
 
 -- General Keymaps
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll half page down and center" })
